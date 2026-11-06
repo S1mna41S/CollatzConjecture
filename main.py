@@ -56,7 +56,16 @@ def main():
 
     print(f'Количество чисел: {args.count:,}')
     print(f'Среднее количество шагов: {np.mean(data):.2f}')
-    print(f'Максимальное количество шагов: {max(data)}')
+    max_steps = max(data)
+
+    # Находим все числа, для которых достигнут максимум
+    max_numbers = [
+        i for i, steps in enumerate(data, start=1)
+        if steps == max_steps
+    ]
+
+    print(f'Максимальное количество шагов: {max_steps}')
+    print(f'Числа с максимальным количеством шагов: {", ".join(map(str, max_numbers))}')
     print(f'Коэффициент тренда (k): {k:.10f}')
     print(f'Свободный член (b): {b:.6f}')
     print(f'Уравнение тренда: y = {k:.10f} * x + {b:.6f}')
