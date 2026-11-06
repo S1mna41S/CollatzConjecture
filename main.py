@@ -26,7 +26,6 @@ def calculate_trend(data: list[int]) -> tuple[float, float, float]:
 def main():
     """
     Для запуска: python main.py --count {count} [--plot]
-    :return:
     """
     parser = argparse.ArgumentParser(
         description='Анализ гипотезы Коллатца'
